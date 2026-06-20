@@ -24,5 +24,8 @@ namespace GymManagement.DAL.Repositories.Interfaces
 
         //Check
         Task<bool> AnyAsync(Expression<Func<TEntity,bool>> predicate, CancellationToken tk = default);
+
+        // Check as data or not
+        Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate,bool tracking = false ,CancellationToken tk = default);
     }
 }

@@ -51,5 +51,11 @@ namespace GymManagement.DAL.Repositories
         {
            return await _set.AsNoTracking().AnyAsync(predicate, tk);
         }
+
+        public async Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, bool tracking = false, CancellationToken tk = default)
+        {
+            IQueryable<TEntity> query = tracking ? _set : _set.AsNoTracking();
+            return await query.FirstOrDefaultAsync(predicate, tk);
+        }
     }
 }
