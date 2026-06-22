@@ -31,20 +31,17 @@ namespace GymManagement.DAL.Repositories
             return await _set.FindAsync(id,tk);
         }
 
-        public async Task<int> AddAsync(TEntity TEntity, CancellationToken tk = default)
+        public async void AddAsync(TEntity TEntity, CancellationToken tk = default)
         {
             _set.Add(TEntity);
-            return await _context.SaveChangesAsync(tk);
         }
-        public async Task<int> UpdateAsync(TEntity TEntity, CancellationToken tk = default)
+        public async void UpdateAsync(TEntity TEntity, CancellationToken tk = default)
         {
             _set.Update(TEntity);
-            return await _context.SaveChangesAsync(tk);
         }
-        public async Task<int> DeleteAsync(TEntity TEntity, CancellationToken tk = default)
+        public async void DeleteAsync(TEntity TEntity, CancellationToken tk = default)
         {
             _set.Remove(TEntity);
-            return await _context.SaveChangesAsync(tk);
         }
 
         public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken tk = default)
