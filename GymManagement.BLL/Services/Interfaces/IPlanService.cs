@@ -15,7 +15,7 @@ namespace GymManagement.BLL.Services.Interfaces
         // Get Plan Details
         Task<PlanViewModel> GetPlanDetailsByIdAsync(int planId, CancellationToken tk = default);
 
-        ////Update Plan
+        //Update Plan
         Task<UpdatePlanViewModel> GetPlanToUpdateAsync(int planId, CancellationToken tk = default);
         Task<bool> UpdatePlanAsync(int planId, UpdatePlanViewModel model, CancellationToken tk = default);
 
